@@ -1,0 +1,24 @@
+{
+    "name": "prof_queue",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "tsx index.ts",
+        "chunk": "tsx chunk.ts",
+        "pola": "tsx pola.ts",
+        "test": "vitest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.15.1",
+    "devDependencies": {
+        "tsx": "^4.20.5",
+        "vitest": "^3.2.4"
+    },
+    "dependencies": {
+        "effect": "^3.17.13",
+        "nodejs-polars": "^0.21.1"
+    }
+}
