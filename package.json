@@ -4,9 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "tsx index.ts",
-        "chunk": "tsx chunk.ts",
-        "pola": "tsx pola.ts",
+        "dev": "tsx src/index.ts",
         "test": "vitest"
     },
     "keywords": [],
@@ -14,6 +12,7 @@
     "license": "ISC",
     "packageManager": "pnpm@10.15.1",
     "devDependencies": {
+        "@types/node": "^24.3.1",
         "tsx": "^4.20.5",
         "vitest": "^3.2.4"
     },

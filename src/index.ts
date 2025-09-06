@@ -13,7 +13,8 @@ const naive: Algo<number[]> = {
   },
   queue(n, arr) {
     arr.push(n);
-    return arr.slice(2);
+    const _ = arr.shift();
+    return arr;
   },
 };
 const chunk: Algo<Chunk.Chunk<number>> = {
@@ -29,10 +30,10 @@ const chunk: Algo<Chunk.Chunk<number>> = {
 const polars: Algo<pl.Series> = {
   name: "polars",
   create(arr) {
-    return pl.Series("series", arr);
+    return pl.Series(arr);
   },
   queue(n, arr) {
-    arr.append(pl.Series("b", [n]));
+    arr.append(pl.Series([n]));
     return arr.slice(1, arr.length);
   },
 };
