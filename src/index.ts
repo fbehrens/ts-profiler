@@ -82,7 +82,18 @@ function profileArrayOperations<T>({
 }
 
 // const algos = [naive, chunk, polars] as const;
-const run = <T>(algo: Algo<T>) =>
-  [1000].map((iterations) => profileArrayOperations({ algo, iterations }));
-const result = [...run(naive), ...run(chunk), ...run(polars)];
+
+// const run = <T>(algo: Algo<T>) =>
+//   [1000].map((iterations) => profileArrayOperations({ algo, iterations }));
+// const result = [...run(naive), ...run(chunk), ...run(polars)];
+
+const runAll = (algos: Algo<unknown>[], iterationsList: number[]) =>
+  algos.flatMap((algo) =>
+    iterationsList.map((iterations) =>
+      profileArrayOperations({ algo, iterations })
+    )
+  );
+
+const result = runAll([naive, chunk, polars], [1000]);
+
 console.table(result);
